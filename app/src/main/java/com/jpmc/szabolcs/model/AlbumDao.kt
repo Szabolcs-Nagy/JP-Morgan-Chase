@@ -29,6 +29,18 @@ interface AlbumDao {
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(album: List<DatabaseAlbum>)
+
+    /**
+     * Dao query with filtering the search functionality based on title name
+     */
+    @Query("select * from DatabaseAlbum WHERE title LIKE :filter")
+    fun getAlbumsSearch(filter: String): LiveData<List<DatabaseAlbum>>
+
+ /**
+     * Dao query with filtering the search functionality based on the userId
+     */
+    @Query("select * from DatabaseAlbum WHERE userId LIKE :filter")
+    fun getAlbumsWithUserId(filter: String): LiveData<List<DatabaseAlbum>>
 }
 
 /**

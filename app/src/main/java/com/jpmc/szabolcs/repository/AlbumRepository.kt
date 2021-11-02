@@ -42,4 +42,16 @@ class AlbumRepository(private val Api: Api, private val database: AlbumDatabase)
     val results: LiveData<List<DatabaseAlbum>> = Transformations.map(database.albums.getDBAlbums()){
         it.asDomainModel()
     }
+    /**
+     * Function for search based on title
+     */
+    fun getAlbumSearch(filter: String): LiveData<List<DatabaseAlbum>> {
+        return database.albums.getAlbumsSearch(filter)
+    }
+    /**
+     * Function for filtering based on userId
+     */
+    fun getAlbumsBasedOnUserId(filter: String): LiveData<List<DatabaseAlbum>> {
+        return database.albums.getAlbumsWithUserId(filter)
+    }
 }

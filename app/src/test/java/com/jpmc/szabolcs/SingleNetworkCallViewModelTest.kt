@@ -5,9 +5,6 @@ import androidx.lifecycle.Observer
 import com.jpmc.szabolcs.model.DatabaseAlbum
 import com.jpmc.szabolcs.network.Api
 import com.jpmc.szabolcs.repository.AlbumRepository
-import com.jpmc.szabolcs.utils.LoadingState
-import com.jpmc.szabolcs.utils.Resource
-import com.jpmc.szabolcs.utils.Resource.Companion.success
 import com.jpmc.szabolcs.viewmodel.AlbumViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.After
